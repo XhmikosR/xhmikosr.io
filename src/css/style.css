@@ -12,20 +12,12 @@ body {
     transform: translateY(-50%);
 }
 
+.social-list {
+    margin-top: 50px;
+}
+
 .social-list a {
-    color: #333;
+    color: inherit;
     display: inline-block;
     margin: 30%;
-    transition: all 0.5s ease 0s;
-}
-
-.social-list a:focus,
-.social-list a:hover {
-    text-decoration: underline;
-    transform: scale(1.3);
-}
-
-.social-list svg {
-    width: 36px;
-    height: 36px;
 }
