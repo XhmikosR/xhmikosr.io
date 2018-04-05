@@ -50,10 +50,14 @@ module.exports = function(grunt) {
                 browsers: [
                     'last 2 version',
                     '> 1%',
+                    'Chrome >= 45',
+                    'Firefox >= 38',
                     'Edge >= 12',
                     'Explorer >= 9',
-                    'Firefox ESR',
-                    'Opera 12.1'
+                    'iOS >= 9',
+                    'Safari >= 9',
+                    'Android >= 4.4',
+                    'Opera >= 30'
                 ]
             },
             pack: {
@@ -83,8 +87,11 @@ module.exports = function(grunt) {
                     decodeEntities: true,
                     ignoreCustomComments: [/^\s*google(off|on):\s/],
                     minifyCSS: {
-                        compatibility: 'ie9',
-                        keepSpecialComments: 0
+                        level: {
+                            1: {
+                                specialComments: 0
+                            }
+                        }
                     },
                     minifyJS: true,
                     minifyURLs: false,
