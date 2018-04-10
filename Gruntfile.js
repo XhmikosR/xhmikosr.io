@@ -45,25 +45,15 @@ module.exports = function(grunt) {
             }
         },
 
-        autoprefixer: {
+        postcss: {
             options: {
-                browsers: [
-                    'last 2 version',
-                    '> 1%',
-                    'Chrome >= 45',
-                    'Firefox >= 38',
-                    'Edge >= 12',
-                    'Explorer >= 9',
-                    'iOS >= 9',
-                    'Safari >= 9',
-                    'Android >= 4.4',
-                    'Opera >= 30'
-                ]
+                processors: [
+                    require('autoprefixer')() // add vendor prefixes
+                 ]
             },
-            pack: {
-                src: '<%= concat.css.dest %>',
-                dest: '<%= concat.css.dest %>'
-            }
+            dist: {
+                src: '<%= concat.css.dest %>'
+             }
         },
 
         uncss: {
@@ -177,7 +167,7 @@ module.exports = function(grunt) {
         'clean',
         'copy',
         'concat',
-        'autoprefixer',
+        'postcss',
         'staticinline'
     ]);
 
@@ -185,7 +175,7 @@ module.exports = function(grunt) {
         'clean',
         'copy',
         'concat',
-        'autoprefixer',
+        'postcss',
         'uncss',
         'staticinline',
         'htmlmin'
