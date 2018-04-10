@@ -48,7 +48,9 @@ module.exports = function(grunt) {
         postcss: {
             options: {
                 processors: [
-                    require('autoprefixer')() // add vendor prefixes
+                    require('postcss-combine-duplicated-selectors')(),
+                    require('css-mqpacker')(),  // combine media queries
+                    require('autoprefixer')()   // add vendor prefixes
                  ]
             },
             dist: {
