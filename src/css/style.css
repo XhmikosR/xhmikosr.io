@@ -4,20 +4,5 @@ html {
 }
 
 body {
-    background-image: -webkit-linear-gradient(to left, #c2e59c, #64b3f4);   /* Chrome 10-25, Safari 5.1-6 */
-    background-image: linear-gradient(to left, #c2e59c, #64b3f4);           /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    position: relative;
-    top: 50%;
-    text-align: center;
-    transform: translateY(-50%);
-}
-
-.social-list {
-    margin-top: 50px;
-}
-
-.social-list a {
-    color: inherit;
-    display: inline-block;
-    margin: 30%;
+    background-image: linear-gradient(to left, #c2e59c, #64b3f4);
 }
