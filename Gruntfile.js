@@ -58,15 +58,16 @@ module.exports = function(grunt) {
              }
         },
 
-        uncss: {
-            options: {
-                htmlroot: '<%= dirs.tmp %>',
-                ignoreSheets: [/fonts.googleapis/, /www.google.com/],
-                stylesheets: ['/css/pack.css']
-            },
+        purgecss: {
             dist: {
-                src: '<%= dirs.dest %>/**/*.html',
-                dest: '<%= concat.css.dest %>'
+                options: {
+                    content: [
+                        '<%= dirs.dest %>/**/*.html'
+                    ]
+                },
+                files: {
+                    '<%= concat.css.dest %>': ['<%= concat.css.dest %>']
+                }
             }
         },
 
@@ -138,13 +139,6 @@ module.exports = function(grunt) {
             src: '<%= dirs.dest %>/**/*.html'
         },
 
-        bootlint: {
-            options: {
-                relaxerror: ['W001', 'W002', 'W003', 'W005']
-            },
-            files: ['<%= dirs.dest %>/**/*.html', '!<%= dirs.dest %>/404.html']
-        },
-
 		'gh-pages': {
 			options: {
 				base: '<%= dirs.dest %>'
@@ -178,14 +172,13 @@ module.exports = function(grunt) {
         'copy',
         'concat',
         'postcss',
-        'uncss',
+        'purgecss',
         'staticinline',
         'htmlmin'
     ]);
 
     grunt.registerTask('test', [
         'build',
-        'bootlint',
         'htmllint'
     ]);
 
