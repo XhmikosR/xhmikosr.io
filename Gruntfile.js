@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = function(grunt) {
-
     grunt.initConfig({
         dirs: {
             dest: 'dist',
@@ -15,10 +14,10 @@ module.exports = function(grunt) {
                     basepath: '<%= dirs.tmp %>/'
                 },
                 files: [{
-                  expand: true,
-                  cwd: '<%= dirs.dest %>/',
-                  src: '**/*.html',
-                  dest: '<%= dirs.dest %>/'
+                    expand: true,
+                    cwd: '<%= dirs.dest %>/',
+                    src: '**/*.html',
+                    dest: '<%= dirs.dest %>/'
                 }]
             }
         },
@@ -49,13 +48,13 @@ module.exports = function(grunt) {
             options: {
                 processors: [
                     require('postcss-combine-duplicated-selectors')(),
-                    require('css-mqpacker')(),  // combine media queries
-                    require('autoprefixer')()   // add vendor prefixes
-                 ]
+                    require('css-mqpacker')(), // combine media queries
+                    require('autoprefixer')() // add vendor prefixes
+                ]
             },
             dist: {
                 src: '<%= concat.css.dest %>'
-             }
+            }
         },
 
         purgecss: {
@@ -114,11 +113,11 @@ module.exports = function(grunt) {
                 port: 8001
             },
             livereload: {
-                 options: {
+                options: {
                     base: '<%= dirs.dest %>/',
                     open: true  // Automatically open the webpage in the default browser
-                 }
-             }
+                }
+            }
         },
 
         watch: {
@@ -139,12 +138,12 @@ module.exports = function(grunt) {
             src: '<%= dirs.dest %>/**/*.html'
         },
 
-		'gh-pages': {
-			options: {
-				base: '<%= dirs.dest %>'
-			},
-			src: ['**']
-		},
+        'gh-pages': {
+            options: {
+                base: '<%= dirs.dest %>'
+            },
+            src: ['**']
+        },
 
         clean: {
             dist: [
@@ -152,7 +151,6 @@ module.exports = function(grunt) {
                 '<%= dirs.tmp %>/'
             ]
         }
-
     });
 
     // Load any grunt plugins found in package.json.
@@ -198,5 +196,4 @@ module.exports = function(grunt) {
         'connect',
         'watch:dev'
     ]);
-
 };
