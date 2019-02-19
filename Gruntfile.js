@@ -135,6 +135,9 @@ module.exports = function(grunt) {
         },
 
         htmllint: {
+            options: {
+                ignore: /^CSS:/
+            },
             src: '<%= dirs.dest %>/**/*.html'
         },
 
