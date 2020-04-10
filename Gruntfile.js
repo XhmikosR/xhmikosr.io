@@ -140,13 +140,6 @@ module.exports = function(grunt) {
             src: '<%= dirs.dest %>/**/*.html'
         },
 
-        'gh-pages': {
-            options: {
-                base: '<%= dirs.dest %>'
-            },
-            src: ['**']
-        },
-
         clean: {
             dist: [
                 '<%= dirs.dest %>/',
@@ -186,11 +179,6 @@ module.exports = function(grunt) {
         'build',
         'connect',
         'watch:build'
-    ]);
-
-    grunt.registerTask('deploy', [
-        'build',
-        'gh-pages'
     ]);
 
     grunt.registerTask('default', [
