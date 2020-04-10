@@ -61,7 +61,9 @@ module.exports = function(grunt) {
                 options: {
                     content: [
                         '<%= dirs.dest %>/**/*.html'
-                    ]
+                    ],
+                    keyframes: true,
+                    variables: true
                 },
                 files: {
                     '<%= concat.css.dest %>': ['<%= concat.css.dest %>']
