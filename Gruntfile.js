@@ -1,5 +1,8 @@
 'use strict';
 
+const autoprefixer = require('autoprefixer');
+const combineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
+
 module.exports = function(grunt) {
     grunt.initConfig({
         dirs: {
@@ -47,8 +50,8 @@ module.exports = function(grunt) {
         postcss: {
             options: {
                 processors: [
-                    require('postcss-combine-duplicated-selectors')(),
-                    require('autoprefixer')() // add vendor prefixes
+                    combineDuplicatedSelectors(),
+                    autoprefixer() // add vendor prefixes
                 ]
             },
             dist: {
@@ -158,7 +161,7 @@ module.exports = function(grunt) {
     });
 
     // Load any grunt plugins found in package.json.
-    require('load-grunt-tasks')(grunt, { scope: 'dependencies' });
+    require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
     require('time-grunt')(grunt);
 
     grunt.registerTask('dev', [
