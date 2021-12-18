@@ -162,7 +162,7 @@ module.exports = function(grunt) {
 
     // Load any grunt plugins found in package.json.
     require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
-    require('time-grunt')(grunt);
+    require('@lodder/time-grunt')(grunt);
 
     grunt.registerTask('dev', [
         'clean',
