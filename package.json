@@ -13,19 +13,19 @@
   "devDependencies": {
     "@lodder/grunt-postcss": "^3.1.1",
     "@lodder/time-grunt": "^4.0.0",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.21",
     "grunt": "^1.6.1",
     "grunt-contrib-clean": "^2.0.1",
     "grunt-contrib-concat": "^2.1.0",
-    "grunt-contrib-connect": "^4.0.0",
+    "grunt-contrib-connect": "^5.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-htmlmin": "^3.1.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-html": "^17.0.0",
-    "grunt-purgecss": "^5.0.0",
+    "grunt-html": "^17.1.0",
+    "grunt-purgecss": "^7.0.2",
     "grunt-static-inline": "^2.0.0",
     "load-grunt-tasks": "^5.1.0",
-    "postcss": "^8.4.31",
+    "postcss": "^8.5.3",
     "postcss-combine-duplicated-selectors": "^10.0.3"
   }
 }
