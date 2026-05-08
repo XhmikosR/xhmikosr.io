@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 env:
   FORCE_COLOR: 2
-  NODE: 22
+  NODE: 24
 
 jobs:
   test:
